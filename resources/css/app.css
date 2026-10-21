@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+
+/* Tailwind v4 defaults dark: to the OS color-scheme media query.
+   This line is what makes class-based dark mode (toggled by our button) work. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Your "primary" brand color scale, moved here from tailwind.config.js.
+       In Tailwind v4 this is how theme colors are defined - the old config
+       file isn't read automatically, which was part of why things looked off.
+       Also fixed: the old config had "50" defined twice (a typo for "500"),
+       which silently broke the mid-range shade. */
+    --color-primary-50: #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-200: #bfdbfe;
+    --color-primary-300: #93c5fd;
+    --color-primary-400: #60a5fa;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #2563eb;
+    --color-primary-700: #1d4ed8;
+    --color-primary-800: #1e40af;
+    --color-primary-900: #1e3a8a;
+}
+
+[x-cloak] { display: none !important; }
+
